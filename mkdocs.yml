@@ -34,8 +34,7 @@ site_author: Gaëtan BOGAERT
 
 # Configuration
 theme:
-  name: null
-  custom_dir: material
+  name: material
 
   # 404 page
   static_templates:
