@@ -1,0 +1,23 @@
+name: Deploy Feature Branch
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2.0.0
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.3.2
+        with:
+          hugo-version: '0.62.2'
+          extended: true
+      - name: Build
+        run: docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material build
+      - name: test
+        run: set
+
+
+
+
