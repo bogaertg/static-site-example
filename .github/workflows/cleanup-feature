@@ -1,0 +1,16 @@
+# .github/workflows/pr-cleanup.yml
+name: cleanup-feature
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  pr-close:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'deployment inactive'
+      uses: 'deliverybot/deployment-status@master'
+      with:
+        state: 'inactive'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        environment: pr${{ github.event.pull_request.number }}
