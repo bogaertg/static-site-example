@@ -1,0 +1,19 @@
+production:
+  environment: production
+ 
+qa:
+  environment: qa
+ 
+staging:
+  environment: production
+  auto_deploy_on: refs/tags/*
+  
+dev:
+  environment: dev
+  auto_deploy_on: refs/heads/master
+  
+review:
+  # Dynamic environment name. The environment will look like pr123.
+  environment: ${{ref}}_(pr-${{ pr }})
+  transient_environment: true
+  auto_deploy_on: pr
