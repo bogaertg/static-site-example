@@ -5,7 +5,7 @@ qa:
   environment: qa
  
 staging:
-  environment: production
+  environment: staging
   auto_deploy_on: refs/tags/*
   
 dev:
