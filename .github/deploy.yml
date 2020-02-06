@@ -14,6 +14,6 @@ dev:
   
 review:
   # Dynamic environment name. The environment will look like pr123.
-  environment: pr${{ pr }}
+  environment: review-pr${{ pr }}
   transient_environment: true
   auto_deploy_on: pr
