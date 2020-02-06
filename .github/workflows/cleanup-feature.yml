@@ -13,4 +13,4 @@ jobs:
       with:
         state: 'inactive'
         token: ${{ secrets.GITHUB_TOKEN }}
-        environment: pr${{ github.event.pull_request.number }}
+        environment: review-pr${{ github.event.pull_request.number }}
